@@ -146,8 +146,12 @@ ul.social-icons {
 
 .location-time-container{
     display: flex;
-    gap: 3em;
+    gap: 6em;
     justify-content: center;
+}
+
+.job-title {
+    margin-bottom: -.01em
 }
 
 .company{
