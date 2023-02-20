@@ -37,6 +37,10 @@ h2 {
 
 }
 
+footer {
+    width: 100%;
+}
+
 a {
     color: #E9ECD0;
     text-decoration: none;
@@ -88,6 +92,8 @@ ul {
 ul li {
     flex: 0 0 35px;
     text-align: center;
+    font-size: small;
+    margin-bottom: -10px;
 }
 
 nav.flexNav {
@@ -100,6 +106,8 @@ nav.flexNav {
 
 nav.flexNav > a {
     margin-bottom: 10px;
+    font-size: small;
+
 }
 
 .fullwidth {
@@ -137,8 +145,8 @@ ul.social-icons {
     margin-top: -20px;
 }
 
-.about-block {
-    background-color: #F7F8EE20;
+.about-block, .portfolio-block, .contact-block {
+    background-color: #F7F8EE70;
     border-radius: 10px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     width: 90%;
@@ -147,7 +155,7 @@ ul.social-icons {
     
 }
 
-.experience-block, .portfolio-block {
+.experience-block, .referrals-block {
     background-color: #F7F8EE20;
     border-radius: 10px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
@@ -157,7 +165,7 @@ ul.social-icons {
 }
 
 .job-container,.project{
-    background-color: #F7F8EE70;
+    background-color: #F7F8EE20;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -173,7 +181,7 @@ ul.social-icons {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    color: #F7F8EE80;
+    color: #0f0f0f;
     /* color: #E9ECD0;
     text-align: justify;
     background-color: #F7F8EE70; */
@@ -221,6 +229,14 @@ ul.social-icons {
 .job-overview{
     font-weight: bold;
     margin-top: -.5em;
+}
+
+.contact-line {
+    margin-top: -1em;
+    font-size: small;
+    padding-bottom: .5em;
+    display: flex;
+    justify-content: center;
 }
 
 .project:hover{
