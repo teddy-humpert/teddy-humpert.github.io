@@ -250,9 +250,11 @@ ul.social-icons {
 }
 
 @media(min-width: 600px) {
+  
     nav.flexNav {
         justify-content: space-between;
         flex-direction: row;
+        width: 94%;
     }
 
     .fullwidth {
@@ -261,15 +263,23 @@ ul.social-icons {
 
     .header {
         color: #E9ECD0;
+        font-size: x-large;
         /* border: 1px solid white; */
         margin-left: 10px;
         display: block;
+        margin-top: -2%;
     }
 
     .headshot {
         width: 8%;
         border-radius: 30px;
-        margin-top: 10px;
+        margin-left: .5%;
+    }
+
+    h2 {
+        justify-content: left;
+        padding: 1%;
+        font-size: x-large;
     }
 
     nav > ul {
@@ -279,24 +289,45 @@ ul.social-icons {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin-right: 20px;
+        margin-right: 20px;]
     }
 
     ul {
         flex-direction: row;
     }
 
+    nav.flexNav > a { 
+        font-size: large;
+    }
+
     ul li {
         flex: 0 0 auto;
         margin-right: 20px;
+        font-size: large;
     }
 
     .fullwidth li:last-child {
-        margin-right: 0px;
+        margin-right: 0;
     }
 
     nav.flexNav > a {
         margin-bottom: 0px;
+    }
+
+    .experience-block, .about-block, .referrals-block, .portfolio-block, .contact-block, footer {
+        margin-left: 1%;
+    }
+
+    .job-container > ul > li{
+        font-style: italic;
+        font-size: small;
+        padding: 1%;
+
+    }
+
+    .job-container > ul {
+        flex-direction: column;
+        text-align: left;
     }
 
 }
