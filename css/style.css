@@ -137,9 +137,9 @@ footer {
 .job-container,.project{
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px rgba(247, 238, 238, 0.2);
   margin: 10px;
-  width: 80%;
+  width: 60%;
   padding: 5px;
 }
 
@@ -164,15 +164,18 @@ footer {
 }
 
 .job-title {
-  margin-bottom: -.05em
+  margin-bottom: -.05em;
+  color: #f7f7f2;
 }
 
 .company{
   font-weight: 300;
+  color: #EFEFD5;
 }
 
 .location, .timeframe{
   font-weight: 100;
+  color: #f7f7f2;
 }
 
 .company{
@@ -221,11 +224,13 @@ footer {
 .job-container > ul > li{
   text-align: left;
   font-size: xx-small;
+  color: #f7f7f2;
 }
 
 .job-overview{
   font-weight: bold;
   margin-top: -.5em;
+  color: #EFEFD5;
 }
 
 .contact-line {
@@ -279,5 +284,26 @@ footer {
     background-clip: padding-box;
     text-align: center;
   }
+
+  .headshot {
+    max-width: 20%;
+  }
+
+  header {
+    top: 1px;
+  }
+
+  footer {
+    height: 5%;
+  }
   
+  .experience-block, .referrals-block {
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+
+  .job-container,.project{
+    width: 80%;
+  }
+
 }
