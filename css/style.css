@@ -199,6 +199,7 @@ footer {
   font-weight: 500;
   color: #fbe45b;
   font-size: x-large;
+  margin-bottom: -2%;
 }
 
 .further-project {
@@ -216,10 +217,25 @@ footer {
   margin-top: -1em
 }
 
-.project-icon {
-  color: white;
-  margin-left: -8%;
+.further-descriptor {
+  color: #fbe45b;
+  margin-top: -.5%;
+
 }
+
+.project-icon {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: large;
+  margin-top: -5%;
+  
+}
+
+.project-icon:last-child {
+  margin-bottom: 5%;
+}
+
 .location, .timeframe{
   font-weight: 500;
   color: #fbe45b;
