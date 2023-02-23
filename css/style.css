@@ -215,10 +215,11 @@ footer {
 
 .job-container > ul > li{
   text-align: left;
-  font-size: x-small;
+  font-size: small;
   color: #fbe45b;
   padding-top: .5em;
   padding-bottom: .5em;
+  font-weight: 300;
 }
 
 .logo {
