@@ -374,6 +374,8 @@ footer {
 
   .headshot {
     max-width: 20%;
+    border: 3px solid #c4aa2395;
+
   }
 
   header {
@@ -398,5 +400,6 @@ footer {
     flex-direction: column;
     gap: 0em;
   }
+  
 
 }
