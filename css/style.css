@@ -46,9 +46,15 @@ header {
 
 
 .name-plate {
-  color: #fbe45b;
+  color: white;
   font-weight: 200;
   /* border: 2px solid white; */
+  background: #c4aa2390;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+
 }
 
 .center-nav {
@@ -210,7 +216,7 @@ footer {
 .job-container > ul > li{
   text-align: left;
   font-size: x-small;
-  color: #E9ECD0;
+  color: #fbe45b;
   padding-top: .5em;
   padding-bottom: .5em;
 }
@@ -250,7 +256,7 @@ footer {
 
 
 .job-overview{
-  font-weight: bold;
+  font-weight: 500;
   font-size: small;
   margin-top: .5em;
   color: white;
@@ -301,8 +307,8 @@ footer {
     font-size: 1rem;
   }
 
-  ul.social-icons {
-    margin-top: 40px;
+  .social-icons {
+    margin-top: 50px;
   }
 
   #right-panel {
