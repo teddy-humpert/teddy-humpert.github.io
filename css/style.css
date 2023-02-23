@@ -41,7 +41,7 @@ header {
 .headshot {
     max-width: 10%;
     border-radius: 50%;
-    border: 5px solid #a6d0c890;
+    border: 8px solid #c4aa2395;
 }
 
 
@@ -49,7 +49,7 @@ header {
   color: white;
   font-weight: 200;
   /* border: 2px solid white; */
-  background: #c4aa2390;
+  /* background: #c4aa2390; */
   width: 100%;
   display: flex;
   flex-grow: 1;
@@ -195,6 +195,31 @@ footer {
   
 }
 
+.further-stuff{
+  font-weight: 500;
+  color:  white;
+  font-size: x-large;
+}
+
+.further-project {
+  font-size: large;
+  font-weight: 100;
+  color: #fbe45b;
+}
+
+.further-container {
+  display: flex;
+  flex-direction: row;
+  gap: 6em;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1em
+}
+
+.project-icon {
+  color: white;
+  margin-left: -8%;
+}
 .location, .timeframe{
   font-weight: 500;
   color: #fbe45b;
