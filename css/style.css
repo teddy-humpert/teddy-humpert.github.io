@@ -234,19 +234,6 @@ footer {
   margin-bottom: 5%;
 }
 
-.name-hover {
-  box-shadow: inset 0 0 0 0 #fbe45b;
-  color: #fbe45b;
-  margin: 0 -.25rem;
-  padding: 0 .25rem;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-  font-size: xxx-large;
-}
-
-.name-hover:hover {
-  box-shadow: inset 300px 0 0 0 #fbe45b90;;
-  color: white;
-}
 
 .location, .timeframe{
   font-weight: 500;
