@@ -39,9 +39,9 @@ header {
 }
 
 .headshot {
-    max-width: 6%;
-    border-radius: 5%;
-    border: 2px solid #F7F8EE70;
+    max-width: 10%;
+    border-radius: 50%;
+    border: 5px solid #a6d0c890;
 }
 
 
@@ -242,10 +242,12 @@ footer {
 .referral-caveat {
   font-size: xx-small;
   text-align: center;
-  margin-top: -3%;
+  color: #ffffff90;
+  margin-top: -1%;
+  /* margin-top: -3%;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 5%; */
 }
 
 .byline {
@@ -261,6 +263,24 @@ footer {
   font-size: small;
   margin-top: .5em;
   color: white;
+}
+
+.referral-image {
+  max-width: 15%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.referral-overview{
+  font-weight: 500;
+  font-size: small;
+  margin-top: .5em;
+  color: white;
+  text-align: center;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  display: flex;
 }
 
 .contact-line {
