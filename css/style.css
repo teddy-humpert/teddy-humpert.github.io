@@ -392,5 +392,11 @@ footer {
   .job-container,.project{
     width: 80%;
   }
+  
+  .further-container {
+    margin-top: 2%;
+    flex-direction: column;
+    gap: 0em;
+  }
 
 }
