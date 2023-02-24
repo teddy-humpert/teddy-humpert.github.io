@@ -15,7 +15,7 @@ body {
   top: 30px;
   height: 60px;
   width:100%;
-  color: white;
+  color: #F6F6EF;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
@@ -51,18 +51,18 @@ body {
 .headshot {
     max-width: 10%;
     border-radius: 50%;
-    border: 5px solid #fbe45b;
+    border: 5px solid  #c4aa23;
 }
 
 .frontpagename {
-  color: white;
+  color: #F6F6EF;
   font-weight: 500;
   font-size: xx-large;
   margin-top: -.25%;
 }
 
 .name-plate {
-  color: white;
+  color: #F6F6EF;
   font-weight: 200;
   /* border: 2px solid white; */
   /* background: #c4aa2390; */
@@ -96,13 +96,15 @@ body {
 }
 
 .row-nav {
+  position: fixed;
+  bottom: 150px;
   display: flex;
   flex-direction: row;
   gap: 2em;
 }
 
 a {
-  color: white;;
+  color: #F6F6EF;
   text-decoration: none;
   padding-top: 8%;
   text-align: center;
@@ -189,6 +191,7 @@ footer {
   margin: 10px;
   width: 40%;
   padding: 5px;
+  background-color: #a6d0c810;
 }
 
 .about-overview {
@@ -213,18 +216,18 @@ footer {
 
 .job-title {
   margin: .3em;
-  color: #fbe45b;
+  color: #F6F6EF;
 }
 
 .company{
   font-weight: 500;
-  color:  white;
+  color:  #dbdbdb;
   
 }
 
 .further-stuff{
   font-weight: 500;
-  color: #fbe45b;
+  color: #F6F6EF;
   font-size: x-large;
   margin-bottom: -2%;
 }
@@ -232,7 +235,7 @@ footer {
 .further-project {
   font-size: large;
   font-weight: 100;
-  color: #fbe45b;
+  color: #F6F6EF;
 }
 
 .further-container {
@@ -243,7 +246,7 @@ footer {
 }
 
 .further-descriptor {
-  color: #fbe45b;
+  color:#dbdbdb;
   margin-top: -.5%;
 
 }
@@ -251,7 +254,7 @@ footer {
 .project-icon {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: #F6F6EF;
   font-size: large;
   margin-top: -5%;
   
@@ -264,7 +267,7 @@ footer {
 
 .location, .timeframe{
   font-weight: 500;
-  color: #fbe45b;
+  color: #dbdbdb;
   margin-top: 1.5em;
   margin-bottom: 1em;
   font-size: small;
@@ -272,7 +275,7 @@ footer {
 
 .further-location {
   font-weight: 300;
-  color: #fbe45b;
+  color: #dbdbdb;
   font-size: small;
   margin-bottom: -1%;
 }
@@ -294,7 +297,7 @@ footer {
 .job-container > ul > li{
   text-align: left;
   font-size: small;
-  color: #fbe45b;
+  color: #dbdbdb;
   padding-top: .5em;
   padding-bottom: .5em;
   font-weight: 300;
@@ -340,20 +343,20 @@ footer {
   font-weight: 500;
   font-size: small;
   margin-top: .5em;
-  color: white;
+  color: #F6F6EF;
 }
 
 .referral-image {
   max-width: 15%;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid #F6F6EF;
 }
 
 .referral-overview{
   font-weight: 500;
   font-size: small;
   margin-top: .5em;
-  color: white;
+  color: #F6F6EF;
   text-align: center;
   width: 70%;
   margin-left: 15%;
@@ -395,9 +398,25 @@ footer {
   height: 20px;
 }
 
-@media screen and (max-width: 1140px) { 
+@media(max-width: 1300px) { 
   .job.container, .project {
-    width: 80%;
+    width: 90%;
+  }
+
+  .headshot {
+    max-width: 13%;
+    border: 3px solid #c4aa23;
+    position: fixed;
+    top: 120px;
+  }
+
+  .experience-block, .referrals-block {
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+
+  .box {
+    width: 60%;
   }
 }
 
@@ -430,9 +449,10 @@ footer {
   }
 
   .headshot {
-     
     max-width: 30%;
-    border: 3px solid #c4aa2395;
+    border: 3px solid #c4aa23;
+    position: fixed;
+    top: 80px;
 
   }
 
@@ -445,7 +465,7 @@ footer {
   }
 
   footer {
-    height: 9%;
+    
     bottom: 5px;
   }
   
@@ -462,6 +482,14 @@ footer {
     margin-top: 2%;
     flex-direction: column;
     gap: 0em;
+  }
+
+  .row-nav {
+    position: fixed;
+    bottom: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
   }
   
 
