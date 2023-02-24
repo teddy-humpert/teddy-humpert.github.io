@@ -321,9 +321,11 @@ footer {
 }
 
 .referral-caveat {
-  font-size: xx-small;
+  position: fixed;
+  top: 130px;
+  font-size: x-small;
   text-align: center;
-  color: #ffffff90;
+  color: #F6F6EF90;
   margin-top: -1%;
   /* margin-top: -3%;
   margin-left: 5%;
@@ -349,14 +351,14 @@ footer {
 .referral-image {
   max-width: 15%;
   border-radius: 50%;
-  border: 2px solid #F6F6EF;
+  border: 2px solid #c4aa23;
 }
 
 .referral-overview{
   font-weight: 500;
   font-size: small;
   margin-top: .5em;
-  color: #F6F6EF;
+  color: #dbdbdb;
   text-align: center;
   width: 70%;
   margin-left: 15%;
@@ -491,6 +493,18 @@ footer {
     flex-direction: row;
     gap: 2em;
   }
-  
 
+  .referral-caveat {
+    position: fixed;
+    top: 80px;
+  }
+
+}
+
+@media(max-width: 450px) {
+  .referral-caveat {
+    position: fixed;
+    top: 80px;
+    font-size: xx-small;
+  }
 }
