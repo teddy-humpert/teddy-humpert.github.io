@@ -448,6 +448,7 @@ footer {
     border-radius: 20px/50px;
     background-clip: padding-box;
     text-align: center;
+    
   }
 
   .headshot {
@@ -467,7 +468,6 @@ footer {
   }
 
   footer {
-    
     bottom: 5px;
   }
   
@@ -478,6 +478,7 @@ footer {
 
   .job-container,.project{
     width: 80%;
+  
   }
   
   .further-container {
@@ -506,5 +507,9 @@ footer {
     position: fixed;
     top: 80px;
     font-size: xx-small;
+  }
+
+  #first-referral{
+    margin-top: 40px;
   }
 }
