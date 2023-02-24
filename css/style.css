@@ -429,6 +429,8 @@ footer {
 }
 
 @media(max-width: 1000px) {
+  
+  
   #left-panel {
     flex-basis: 100%;
   }
@@ -463,10 +465,6 @@ footer {
     position: fixed;
     top: 80px;
 
-  }
-
-  .nav-list {
-    margin-top: 60px;
   }
 
   .header {
@@ -506,6 +504,7 @@ footer {
     top: 80px;
   }
 
+
 }
 
 @media(max-width: 450px) {
@@ -517,5 +516,11 @@ footer {
 
   #first-job-container{
     margin-top: 40px;
+  }
+
+  .column-nav {
+    position: fixed;
+    top: 220px;
+    font-size: normal;
   }
 }
