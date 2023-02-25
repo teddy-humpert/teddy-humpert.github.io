@@ -37,7 +37,7 @@ body {
   display: flex;
   text-transform: uppercase;
   justify-content: center;
-  font-weight: 500;
+  font-weight: 300;
   margin-top: -.01px;
 }
 
@@ -217,11 +217,12 @@ footer {
 .job-title {
   margin: .3em;
   color: #F6F6EF;
+  font-weight: 300;
 }
 
 .company{
-  font-weight: 500;
-  color:  #dbdbdb;
+  font-weight: 300;
+    color:  #dbdbdb;
   
 }
 
@@ -266,8 +267,8 @@ footer {
 
 
 .location, .timeframe{
-  font-weight: 500;
-  color: #dbdbdb;
+  font-weight: 300;
+    color: #dbdbdb;
   margin-top: 1.5em;
   margin-bottom: 1em;
   font-size: small;
@@ -342,8 +343,8 @@ footer {
 
 
 .job-overview{
-  font-weight: 500;
-  font-size: small;
+  font-weight: 300;
+    font-size: small;
   margin-top: .5em;
   color: #F6F6EF;
 }
