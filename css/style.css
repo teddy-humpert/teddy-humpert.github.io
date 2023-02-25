@@ -509,6 +509,10 @@ footer {
 }
 
 @media(max-width: 450px) {
+  .headshot {
+    max-width: 40%;
+  }
+  
   .referral-caveat {
     position: fixed;
     top: 80px;
