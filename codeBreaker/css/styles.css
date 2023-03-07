@@ -67,9 +67,6 @@ p {
   cursor: pointer;
 }
 
-blue {
-  background-color: blue;
-}
 
 footer {
   margin-top: 50px;
@@ -194,4 +191,37 @@ footer {
 #bottomMargin {
   display: block;
   height: 10%;
+}
+
+
+@media(max-width: 450px) {
+  header {
+    margin-top: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+
+
+  #codeBoxes li {
+    margin: 0 10px;
+    
+  }
+
+  footer {
+    bottom: 20px;
+  }
+
+  #codeBoxes p.guessResult {
+    font-size: 15px;
+    margin: -30px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  #btnStartOver, #btnHome {
+    font-size: 2em;
+  }
 }
