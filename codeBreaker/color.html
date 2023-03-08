@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Addition Practice</title>
+  <title>CodeBreaker</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Oswald:wght@300;400;600&display=swap"
-  rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 </head>
-<body>
+<div class="gameScreen">
 
-  <header>
-    <h1>Break the Code</h1>
-    <!-- <p class="show-hide">Please select an answer below the problem by clicking on the box</p> -->
-  </header>
+  <body>
 
-  <main>
-   
-    <section id="codeBoxes" class="show-hide">
-      <ul class="line-1">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <button id="codeButton">commit?</button>
-      </ul>
-    </section>
-  
-  </main>
-  <div id="bottomMargin"></div>
-  <footer>
-    <button id="btnStartOver">restart</button>
-    <button id="btnHome">Home</button>
-  </footer>
+    <header>
+      <h1>Break the Code</h1>
+      <!-- <p class="show-hide">Please select an answer below the problem by clicking on the box</p> -->
+    </header>
 
-  <script src="js/color.js"></script>
+    <main>
+      <div class="solveCode">
+        <section id="codeDisplay" class="show-hide">
+          <ul>
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+          </ul>
+        </section>
+        <p class='gameDesc'>Solve below with a combination of blue, green, red or white. </p>
+      </div>
+      <section id="codeBoxes" class="show-hide">
+        <ul class="line-1">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <button id="codeButton">commit?</button>
+        </ul>
+      </section>
 
-</body>
+      <div class="small-spacer"></div>
+
+    </main>
+    <div id="bottomMargin"></div>
+    <footer>
+      <button id="btnStartOver">restart</button>
+      <button id="btnHome">Home</button>
+    </footer>
+
+    <script src="js/color.js"></script>
+
+  </body>
+</div>
+
 </html>

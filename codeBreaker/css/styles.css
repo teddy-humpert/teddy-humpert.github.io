@@ -1,6 +1,7 @@
 /* color: #2c7c94; #a65852; #c4aa23; #F6F6EF; */
 
 
+
 body {
   height: 100vh;
   width: 100vw;
@@ -10,11 +11,13 @@ body {
 }
 
 header {
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   color: #F6F6EF;
   text-transform: uppercase;
+  background-color: #2c7c94;
+ 
 }
 
 main {
@@ -29,11 +32,18 @@ header {
   background-color: #2c7c94;
   top: 0px;
   height: 10%;
+ 
 }
 
 h1 {
   font-family: Oswald, Arial, Helvetica, sans-serif;  font-size: 4rem;
   top: 0px;
+  background-color: #2c7c94;
+  border-bottom: 2px solid white;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: -10px;
 }
 
 h2 {
@@ -45,11 +55,58 @@ p {
   font-size: 2rem;
 }
 
+.solveCode {
+  margin-top: 100px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-bottom: 2px solid white;
+  padding-bottom: 0px;
+}
+
+#codeDisplay {
+  margin-top: 4%;
+  margin-bottom: -100px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#codeDisplay ul {
+  margin-bottom: 40px;
+  padding: 0;
+  margin: 40px auto;
+  display:flex;
+  list-style-type: none;
+  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#codeDisplay li {
+  margin: 0 20px;
+  /* padding: 20px 30px; */
+  cursor: pointer;
+  color: #F6F6EF;
+  background-color: #c4aa23;
+  border-radius: 100px;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+}
+
+.gameDesc {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 100px;
+}
+
 #codeBoxes {
   margin-bottom: 100px;
   width: 26%;
   margin-left: 37%;
   margin-right: 37%; 
+  margin-top: -120px;
 }
 
 #codeBoxes ul {
@@ -83,11 +140,9 @@ p {
   cursor: pointer;
 }
 
-blue {
-  background-color: blue;
+.small-spacer {
+  height: 40px;
 }
-
-
 
 button {
   display: block;
@@ -151,12 +206,15 @@ button:hover {
 }
 
 footer {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   font-size: 12px;
   position: fixed;
   background-color: #2c7c94;
   bottom: 0px;
-  width: 100vw;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-top: 2px solid white;
 }
 
 #btnHome {
@@ -187,15 +245,15 @@ footer {
 }
 
 #codeBoxes li.blue {
-  background-color: blue;
+  background-color: rgb(62, 62, 139);
 }
 
 #codeBoxes li.green {
-  background-color: green;
+  background-color: rgb(196, 202, 109);
 }
 
 #codeBoxes li.red {
-  background-color: red;
+  background-color: #f24f26;
 }
 
 #codeBoxes li.white {
