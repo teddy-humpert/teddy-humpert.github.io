@@ -139,36 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function checkAnswer(fixedArray, codeBlock) {
-    //ul.line-counter
-    // so this will be something like [2,3,1,0]
-    // need to take ulchildren and create an array. 
-    // they come in like li.red, li.green, li.blue, li.white
-    // for (let i = 0; i < 4; i++) {
-    //   console.log(checkArray[i]);
-    //   console.log(codeBlock[i]);
-    //   let guess = checkArray[i];
-    //   console.log(guess);
-    //   if (guess.classList.contains('blue')) {
-    //     fixedArray.push(0);
-    //   } if (guess.classList.contains('green')) {
-    //     fixedArray.push(1);
-    //   } if (guess.classList.contains('red')) {
-    //     fixedArray.push(2);
-    //   } if (guess.classList.contains('white')) {
-    //     fixedArray.push(3);
-    //   }
-    // }
-    // checkArray.forEach((guess) => {
-    //   if (guess.classList.contains('blue')) {
-    //     fixedArray.push(0);
-    //   } if (guess.classList.contains('green')) {
-    //     fixedArray.push(1);
-    //   } if (guess.classList.contains('red')) {
-    //     fixedArray.push(2);
-    //   } if (guess.classList.contains('white')) {
-    //     fixedArray.push(3);
-    //   } 
-    // });
+
     console.log(fixedArray);
     console.log(codeBlock);
     return arraysEqual(fixedArray, codeBlock);
@@ -199,9 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return fixedArray;
   }
 
-
-
+  // issue right now
+  // with 1,3,2,1 == a guess of 1,1,1,1 is returnining 2 right, 1 near, 1 wrong
+  // should be 2 right, 2 wrong.
+  // map conditionals issue - needs troubleshooting
   // pulling from my command line version at this point, will see how this goes.
+  //codeblock mapping correctly
+  //buildingMap mapping correctly - have a feeling it's because i'm doing double duty with for loop.
+
+
   function checkGuessVsCode(fixedArray, codeBlock) {
     let rightCount = 0;
     let wrongCount = 0;
@@ -210,42 +187,66 @@ document.addEventListener('DOMContentLoaded', () => {
     let nearString = "";
     let codeBlockMap = createMap(codeBlock);
     let buildingMap = new Map(); // need a 'wordMap' function here...
+    console.log(codeBlockMap);
 
-    for (let i = 0; i < codeBlock.length; i++) {
+    for (let i = 0; i < 4; i++) {
 
       let guessNum = fixedArray[i];
 
       if (!buildingMap.has(guessNum)) {
-        buildingMap.set(guessNum, 1);
+        buildingMap.set(guessNum, 1); // if it's not in the bldgmap, put it in at val.1
       } else {
         buildingMap.set(guessNum, buildingMap.get(guessNum) + 1);
       } // line 140 in java version
+      console.log('this is the map.get.guessnum' + buildingMap.get(guessNum));
+    }
+    console.log(buildingMap);
 
-      if (fixedArray[i] == codeBlock[i]) {
+
+    // ok so this is out of control
+    // need to first check if any art exact matches
+    // remove from map
+    // then check if any are near, and if not then pure wrong.
+    let checkedCounter = 0;
+    for (let j = 0; j < codeBlock.length; j++) {
+      let guessNum = fixedArray[j];
+      if (fixedArray[j] == codeBlock[j]) { // if they're an exact match. add to count & decrease map
+        console.log(codeBlockMap);
         rightCount++;
-      } // line 145 in java version
-
-      //continue from line 152 in original
-      if (fixedArray[i] != codeBlock[i] &&
-        (new String(codeBlock).indexOf(fixedArray[i]) > -1)) {
-
-        if (buildingMap.get(guessNum) <= codeBlockMap.get(guessNum)) {
-          nearCount++;
-        } else {
-          wrongCount++;
-        }
-
+        checkedCounter++;
+        console.log(checkedCounter);
+        codeBlockMap.set(guessNum, codeBlockMap.get(guessNum) - 1);
+        console.log(buildingMap);
+        console.log(codeBlockMap);
       }
+    }
 
-      if (fixedArray[i] != codeBlock[i] &&
-        (new String(codeBlock).indexOf(fixedArray[i]) < 0)) {
+    // now check remaining
+    // issue is map is potentially all 0s - so i can check if there's a near remaining, but i have no way to tell if it's 0'd out.
+
+    for (let j = 0; j < codeBlock.length; j++) {
+      let guessNum = fixedArray[j];
+      if ((fixedArray[j] != codeBlock[j]) && !(codeBlockMap.get(guessNum) > 0)) { // how to make this exclusive against above condition....farts
         wrongCount++;
+        checkedCounter++;
+        console.log(checkedCounter);
       }
+      if ((fixedArray[j] != codeBlock[j]) && (codeBlockMap.get(guessNum) > 0)) {
+        console.log(codeBlockMap);
+        nearCount++;
+        checkedCounter++;
+        console.log(checkedCounter);
+        codeBlockMap.set(guessNum, codeBlockMap.get(guessNum) - 1);
+        console.log(buildingMap);
+        console.log(codeBlockMap);
+      }
+      
     }
     guessResultArray.push(rightCount + ' in the exact right place');
     guessResultArray.push(nearCount + ' right color but wrong place');
     guessResultArray.push(wrongCount + ' just plain wrong');
     return guessResultArray;
+
   }
 
   function displayGuessResult(guessResultArray, counter) {
@@ -253,8 +254,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const p = document.createElement('p');
     p.classList.add('guessResult');
     let str = "";
-    for (let i = 0; i < guessResultArray.length ; i++) {
-      str += guessResultArray[i] 
+    for (let i = 0; i < guessResultArray.length; i++) {
+      str += guessResultArray[i]
       if (i < 2) {
         str += " / ";
       }
@@ -265,6 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function createMap(intArray) {
     let output = new Map();
+    output.set(0, 0);
+    output.set(1, 0);
+    output.set(2, 0);
+    output.set(3, 0);
     for (let i = 0; i < 4; i++) {
       // console.log(intArray[i]);
       let guess = intArray[i];
