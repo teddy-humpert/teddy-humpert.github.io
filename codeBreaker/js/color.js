@@ -32,21 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(codeBlock);
 
   //start over
-  const startOverButton = document.getElementById('btnStartOver');
-  startOverButton.addEventListener('click', () => {
-    console.log('you hit start over')
-    document.location.reload();
-  })
+  // const startOverButton = document.getElementById('btnStartOver');
+  // startOverButton.addEventListener('click', () => {
+  //   console.log('you hit start over')
+  //   document.location.reload();
+  // })
 
   //home
-  const homeButton = document.getElementById('btnHome');
-  homeButton.addEventListener('click', () => {
-    console.log('you hit home')
-    window.location = "index.html";
-  })
+  // const homeButton = document.getElementById('btnHome');
+  // homeButton.addEventListener('click', () => {
+  //   console.log('you hit home')
+  //   window.location = "index.html";
+  // })
 
   const lockButton = document.getElementById('codeButton');
   lockButton.addEventListener('click', () => {
+    console.log('you clicked the code button')
     let fixedArray = fixArray();
     let isCorrect = checkAnswer(fixedArray, codeBlock);
     console.log(codeBlock);
