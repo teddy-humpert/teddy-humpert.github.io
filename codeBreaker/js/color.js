@@ -47,44 +47,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lockButton = document.getElementById('codeButton');
   lockButton.addEventListener('click', () => {
-    console.log('you clicked the code button')
-    let fixedArray = fixArray();
-    let isCorrect = checkAnswer(fixedArray, codeBlock);
-    console.log(codeBlock);
-    let guessResult = checkGuessVsCode(fixedArray, codeBlock);
-    displayGuessResult(guessResult, counter);
-    console.log(guessResult);
-    console.log(isCorrect);
-    if (!isCorrect) {
-      counter++;
-      codeBoxes = document.querySelectorAll('li');
-      console.log('you clicked the lock button')
-      codeBoxes.forEach((codeBox) => {
-        codeBox.classList.add('locked');
-      });
-      const codeBoxesSection = document.getElementById('codeBoxes');
-      console.log(codeBoxesSection);
-      const ul = document.createElement('ul');
-      ul.classList.add('line-' + counter);
-      console.log(ul.classList);
-      const li1 = document.createElement('li');
-      const li2 = document.createElement('li');
-      const li3 = document.createElement('li');
-      const li4 = document.createElement('li');
-      codeBoxesSection.appendChild(ul);
-      ul.appendChild(li1);
-      ul.appendChild(li2);
-      ul.appendChild(li3);
-      ul.appendChild(li4);
-      ul.appendChild(lockButton);
-      codeBoxes = document.querySelectorAll('li');
-      addUnchanged();
-      addCodeBoxListener();
+    console.log(isChanged() + 'this is the changed test');
+    if (isChanged()) {
+      console.log('you clicked the code button')
+      let fixedArray = fixArray();
+      let isCorrect = checkAnswer(fixedArray, codeBlock);
+      console.log(codeBlock);
+      let guessResult = checkGuessVsCode(fixedArray, codeBlock);
+      displayGuessResult(guessResult, counter);
+      console.log(guessResult);
+      console.log(isCorrect);
+      if (!isCorrect) {
+        counter++;
+        codeBoxes = document.querySelectorAll('li');
+        console.log('you clicked the lock button')
+        codeBoxes.forEach((codeBox) => {
+          codeBox.classList.add('locked');
+        });
+        const codeBoxesSection = document.getElementById('codeBoxes');
+        console.log(codeBoxesSection);
+        const ul = document.createElement('ul');
+        ul.classList.add('line-' + counter);
+        console.log(ul.classList);
+        const li1 = document.createElement('li');
+        const li2 = document.createElement('li');
+        const li3 = document.createElement('li');
+        const li4 = document.createElement('li');
+        codeBoxesSection.appendChild(ul);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        ul.appendChild(lockButton);
+        codeBoxes = document.querySelectorAll('li');
+        addUnchanged();
+        addCodeBoxListener();
+      } else {
+        alert('you got it!');
+      }
     } else {
-      alert('you got it!');
+      alert('make sure to change all nodes');
     }
 
-  })
+    })
 
   function addUnchanged() {
     codeBoxes.forEach((codeBox) => {
@@ -171,6 +176,25 @@ document.addEventListener('DOMContentLoaded', () => {
     return fixedArray;
   }
 
+  function isChanged() {
+    let checkedUl = document.querySelector('ul.line-' + counter);
+    let testLine = Array.from(checkedUl.children);
+    // let checkArray = checkedUl.children;
+    testLine.pop();
+    console.log(testLine);
+    let boolArray = [];
+    for (let i = 0; i < testLine.length; i++) {
+      if (testLine[i].classList.contains('unchanged')) {
+        boolArray.push(false);
+      } else {
+        boolArray.push(true);
+      }
+    }
+    if (boolArray.includes(false)) {
+      return false;
+    } return true;
+  }
+
   // issue right now
   // with 1,3,2,1 == a guess of 1,1,1,1 is returnining 2 right, 1 near, 1 wrong
   // should be 2 right, 2 wrong.
@@ -241,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(buildingMap);
         console.log(codeBlockMap);
       }
-      
+
     }
     guessResultArray.push(rightCount + ' in the exact right place');
     guessResultArray.push(nearCount + ' right color but wrong place');
