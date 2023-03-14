@@ -19,6 +19,9 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  text-shadow: 1px 1px 1px #25252580;
+
+  
 }
 
 .header-text {
@@ -52,7 +55,7 @@ body {
     max-width: 10%;
     border-radius: 50%;
     border: 5px solid  #c4aa23;
-}
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
 
 .frontpagename {
   color: #F6F6EF;
@@ -109,6 +112,7 @@ a {
   padding-top: 8%;
   text-align: center;
   font-size: smaller;
+  
 }
 
 a:hover {
@@ -125,6 +129,9 @@ footer {
   line-height: 50px;
   height: 50px;
   background: #c4aa23;
+  text-shadow: 1px 1px 1px #25252580;
+
+  
 }
 
 .footer-nav {
@@ -177,11 +184,14 @@ footer {
 .experience-block, .referrals-block {
   border-radius: 10px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  width: 100rem;
+  margin: auto;
+  /* margin-left: 5rem; */
+  /* margin-right: 5rem; */
+  margin-top: 8rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .job-container,.project{
@@ -191,6 +201,9 @@ footer {
   margin: 10px;
   width: 40%;
   padding: 5px;
+  font-size: 1rem;
+  text-shadow: 1px 1px 1px #25252580;
+
   /* background-color: #a6d0c810; */
 }
 
@@ -214,15 +227,29 @@ footer {
   margin-top: -1em
 }
 
+.p-spacer {
+  margin: -10px;
+}
+
+i.fab {
+  margin: 1rem;
+}
+
+a.witness {
+  /* border: 5px solid red; */
+  margin-bottom: -10px;
+
+}
+
 .job-title {
-  margin: .3em;
+  margin: 0em;
   color: #F6F6EF;
   font-weight: 300;
 }
 
 .company{
   font-weight: 300;
-    color:  #dbdbdb;
+  color: #F6F6EF;
   
 }
 
@@ -269,15 +296,17 @@ footer {
 
 .location, .timeframe{
   font-weight: 300;
-    color: #dbdbdb;
+  color: #F6F6EF;
   margin-top: 1.5em;
   margin-bottom: 1em;
-  font-size: small;
+  font-size: 1rem;
+  text-shadow: none;
+
 }
 
 .further-location {
   font-weight: 300;
-  color: #dbdbdb;
+  color: #F6F6EF;
   font-size: small;
   margin-bottom: -1%;
 }
@@ -288,6 +317,8 @@ footer {
 
 .company{
   display: inline;
+  text-shadow: none;
+
 }
 
 .job-container > ul {
@@ -298,11 +329,13 @@ footer {
 
 .job-container > ul > li{
   text-align: left;
-  font-size: small;
-  color: #dbdbdb;
+  font-size: 1rem;
+  color: #F6F6EF;
   padding-top: .5em;
   padding-bottom: .5em;
   font-weight: 300;
+  text-shadow: none;
+
 }
 
 .logo {
@@ -323,16 +356,17 @@ footer {
 }
 
 .referral-caveat {
-  position: fixed;
-  top: 130px;
-  font-size: x-small;
+
+  font-size: small;
   text-align: center;
-  color: #F6F6EF90;
-  margin-top: -1%;
+color: #F6F6EF;  margin-top: -1%;
   /* margin-top: -3%;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%; */
+  padding: 10px;
+  margin-bottom: 2rem;
+  
 }
 
 .byline {
@@ -342,30 +376,36 @@ footer {
   margin-bottom: -.5%;
 }
 
+#cheatUp {
+  margin-top: -3rem;
+}
 
 .job-overview{
   font-weight: 300;
-    font-size: small;
-  margin-top: .5em;
+    font-size: 1rem;
+  margin-top: -.5em;
   color: #F6F6EF;
+  text-shadow: none;
 }
 
 .referral-image {
   max-width: 15%;
   border-radius: 50%;
   border: 2px solid #c4aa23;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .referral-overview{
   font-weight: 500;
-  font-size: small;
+  font-size: 1rem;
   margin-top: .5em;
-  color: #dbdbdb;
+  color: #F6F6EF;
   text-align: center;
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
   display: flex;
+  text-shadow: none;
 }
 
 .contact-line {
@@ -410,9 +450,9 @@ footer {
 }
 
 @media(max-width: 1300px) { 
-  .job.container, .project {
+  /* .job.container, .project {
     width: 90%;
-  }
+  } */
 
   .headshot {
     max-width: 13%;
@@ -421,14 +461,75 @@ footer {
     top: 120px;
   }
 
-  .experience-block, .referrals-block {
-    margin-top: 10%;
+  /* .experience-block, .referrals-block {
     margin-bottom: 20%;
+  } */
+
+  #left-panel {
+    flex-basis: 100%;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+  }
+
+  .social-icons {
+    margin-top: 50px;
+  }
+
+  #right-panel {
+    display: none;
   }
 
   .box {
-    width: 60%;
+    width: 40%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.2);
+    padding: 35px;
+    border: 2px solid #fff;
+    border-radius: 20px/50px;
+    background-clip: padding-box;
+    text-align: center;
+    
   }
+
+  
+  .header {
+    top: 1px;
+  }
+
+  footer {
+    bottom: 5px;
+  }
+/*   
+  .experience-block, .referrals-block {
+    margin-bottom: 20%;
+  } */
+
+  .job-container,.project{
+    width: 80%;
+  
+  }
+  
+  .further-container {
+    margin-top: 2%;
+    flex-direction: column;
+    gap: 0em;
+  }
+
+  .row-nav {
+    position: fixed;
+    bottom: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .referral-caveat {
+    position: fixed;
+    top: 80px;
+  }
+
 }
 
 @media(max-width: 1000px) {
@@ -477,11 +578,10 @@ footer {
   footer {
     bottom: 5px;
   }
-  
+/*   
   .experience-block, .referrals-block {
-    margin-top: 20%;
     margin-bottom: 20%;
-  }
+  } */
 
   .job-container,.project{
     width: 80%;
@@ -521,9 +621,13 @@ footer {
     font-size: xx-small;
   }
 
-  #first-job-container{
-    margin-top: 40px;
+  #cheatUp {
+    margin-top: 0;
   }
+
+  /* #first-job-container{
+    margin-top: 40px;
+  } */
 
   .column-nav {
     position: fixed;
