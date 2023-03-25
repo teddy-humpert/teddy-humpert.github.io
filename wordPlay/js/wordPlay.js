@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(textField.placeholder);
 
-
   function handleKeyClick(event) {
     textField.value += event.target.innerText;
     console.log(event.target.innerText);
@@ -117,6 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
         stopTimer();
         counter = 1;
       } else {
+        // add class to completed text field
+        textField.classList.add("wrapped");
         counter++;
         newKeyboard();
         console.log(counter);
@@ -313,16 +314,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //dropdown stuff
 
-  const dropIcons = document.querySelectorAll('.dropIcon');
+  const dropIcons = document.querySelectorAll(".dropIcon");
 
-dropIcons.forEach((icon) => {
-  icon.addEventListener('click', () => {
-    console.log("you clicked a dropdown button")
-    const dropdown = icon.parentNode;
-    console.log(dropdown);
-    const dropdownContent = dropdown.querySelector('.dropdown-content');
-    console.log(dropdownContent);
-    dropdownContent.classList.toggle('show');
+  dropIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      console.log("you clicked a dropdown button");
+      const dropdown = icon.parentNode;
+      console.log(dropdown);
+      const dropdownContent = dropdown.querySelector(".dropdown-content");
+      console.log(dropdownContent);
+      dropdownContent.classList.toggle("show");
+    });
   });
-});
+
+  // disable dbl click behavior
+  // add an event listener for the 'dblclick' event
+  document.addEventListener("dblclick", function (event) {
+    event.preventDefault();
+  });
 });
