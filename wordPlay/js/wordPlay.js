@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function newKeyboard() {
     // get rows, clear rows,
-    const buttonsToClear = document.querySelectorAll("button.key");
+    const buttonsToClear = document.querySelectorAll("h2.key");
     let clearBtn = document.querySelector(".clear");
     let deleteBtn = document.querySelector(".delete");
     deleteBtn.remove();
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //ROW 1
     const row1 = document.querySelector(".row1");
     for (let i = 0; i < 6; i++) {
-      const button = document.createElement("button");
+      const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
       button.textContent = useArray[i].toUpperCase();
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //add delete button
-    const deleteButton = document.createElement("button");
+    const deleteButton = document.createElement("h2");
     // Set the class and data-key attributes
     deleteButton.classList.add("delete");
     deleteButton.innerText = "\u2421";
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //ROW 2
     const row2 = document.querySelector(".row2");
     for (let i = 6; i < 13; i++) {
-      const button = document.createElement("button");
+      const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
       button.textContent = useArray[i].toUpperCase();
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //ROW 3
     const row3 = document.querySelector(".row3");
     for (let i = 13; i < 20; i++) {
-      const button = document.createElement("button");
+      const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
       button.textContent = useArray[i].toUpperCase();
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //ROW 4
     const row4 = document.querySelector(".row4");
     for (let i = 20; i < 26; i++) {
-      const button = document.createElement("button");
+      const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
       button.textContent = useArray[i].toUpperCase();
@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //add clear button
-    const clearButton = document.createElement("button");
+    const clearButton = document.createElement("h2");
     // Set the class and data-key attributes
     clearButton.classList.add("clear");
     clearButton.innerText = "\u2327";
