@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let keys = document.querySelectorAll(".key");
   let textField = document.getElementById("text-field" + counter);
   const currentValue = textField.value;
-  const clearBtn = document.querySelector(".clear");
-  const deleteBtn = document.querySelector(".delete");
+  let clearBtn = document.querySelector(".clear");
+  let deleteBtn = document.querySelector(".delete");
   const keyboardBtn = document.querySelector(".newKeyboard");
   let timer = document.getElementById("timer");
   let startStopButton = document.getElementById("start-stop");
@@ -143,6 +143,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(counter);
         textField = document.getElementById("text-field" + counter);
         console.log(textField.value);
+        let clearBtn = document.querySelector(".clear");
+        let deleteBtn = document.querySelector(".delete");
+        clearBtn.addEventListener("click", () => {
+          textField.value = "";
+        });
+        deleteBtn.addEventListener("click", deleteLastCharacter);
         // Call the function to add the event listener
       }
     } else {
@@ -217,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //add delete button
     const deleteButton = document.createElement("button");
     // Set the class and data-key attributes
-    deleteButton.classList.add("key");
     deleteButton.classList.add("delete");
     deleteButton.innerText = "\u2421";
     row1.appendChild(deleteButton);
@@ -255,7 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //add clear button
     const clearButton = document.createElement("button");
     // Set the class and data-key attributes
-    clearButton.classList.add("key");
     clearButton.classList.add("clear");
     clearButton.innerText = "\u2327";
     row4.appendChild(clearButton);
@@ -275,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteLastCharacter() {
-    const textField = document.getElementById("text-field1");
+    let textField = document.getElementById("text-field"+counter);
     const currentValue = textField.value;
     textField.value = currentValue.substring(0, currentValue.length - 1);
   }
@@ -307,10 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
       startStopButton.innerText = "Start";
       stopTimer();
     }
-  });
-
-  document.addEventListener('dblclick', function(event) {
-    event.preventDefault();
   });
 
   // so i'm going to need an event listener that's watching for when textfield inner text matches placeholder text
