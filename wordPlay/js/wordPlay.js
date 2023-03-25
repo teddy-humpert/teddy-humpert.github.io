@@ -309,6 +309,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.addEventListener('dblclick', function(event) {
+    event.preventDefault();
+  });
+
   // so i'm going to need an event listener that's watching for when textfield inner text matches placeholder text
   textField = document.getElementById("text-field1");
   textField.addEventListener("input", function () {
