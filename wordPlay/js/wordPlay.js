@@ -104,6 +104,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log(textField.placeholder);
 
+  //drop down stuff
+
+  const dropdownButtons = document.querySelectorAll('.dropdown i');
+  const dropdownMenus = document.querySelectorAll('.dropdown-content');
+  console.log(dropdownButtons);
+  console.log(dropdownMenus);
+  
+  // Add a click event listener to each dropdown button
+  dropdownButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      // Toggle the display of the corresponding dropdown menu
+      dropdownMenus[index].classList.toggle('show');
+    });
+  });
+  
+  // Close the dropdown menus if the user clicks outside of them
+  window.addEventListener('click', (event) => {
+    if (!event.target.matches('.dropdown i')) {
+      dropdownMenus.forEach((menu) => {
+        if (menu.classList.contains('show')) {
+          menu.classList.remove('show');
+        }
+      });
+    }
+  });
+
   //   keys.forEach((key) => {
   //     key.addEventListener("click", () => {
   //       textField.value += key.innerText;
@@ -299,9 +325,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let hours = Math.floor(elapsedTime / 3600);
     let minutes = Math.floor((elapsedTime - hours * 3600) / 60);
     let seconds = elapsedTime - hours * 3600 - minutes * 60;
-    timer.innerText = `${hours.toString().padStart(2, "0")}:${minutes
+    timer.innerText = `${minutes.toString().padStart(2, "0")}:${seconds
       .toString()
-      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+      .padStart(2, "0")}`;
   }
 
   startStopButton.addEventListener("click", function () {
@@ -325,4 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Inner text does not match placeholder text");
     }
   });
+
+  
 });
