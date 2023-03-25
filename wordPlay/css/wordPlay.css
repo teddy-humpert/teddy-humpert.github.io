@@ -1,0 +1,37 @@
+/* center things
+flex box things
+can't wait for this to screw up all my logic */
+
+#stopwatch {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textFields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px; /* set a fixed height for the keyboard */
+  align-items: center;
+}
+
+.row1,
+.row2,
+.row3,
+.row4 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#keyboard button {
+    width: 30px;
+    height: 30px;
+}
