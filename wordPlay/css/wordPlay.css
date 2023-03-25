@@ -1,25 +1,41 @@
-/* center things
-flex box things
-can't wait for this to screw up all my logic */
+html, body {
+  width: 100%;
+  margin: auto;
+}
 
 #stopwatch {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center; /* center horizontally */
+  flex-direction: column;
 }
 
 .textFields {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
+#text-field1,
+#text-field2,
+#text-field3,
+#text-field4,
+#text-field5 {
+ width: 400px;
+ height: 30px;
+ text-align: center;
+}
+
 #keyboard {
   display: flex;
+  flex-grow: 1;
+
   flex-direction: column;
   justify-content: space-between;
-  height: 100px; /* set a fixed height for the keyboard */
+  height: 20vh; /* set a fixed height for the keyboard */
   align-items: center;
 }
 
@@ -32,6 +48,6 @@ can't wait for this to screw up all my logic */
 }
 
 #keyboard button {
-    width: 30px;
-    height: 30px;
+  width: 50px;
+  height: 50px;
 }
