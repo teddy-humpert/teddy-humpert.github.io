@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentValue = textField.value;
   let clearBtn = document.querySelector(".clear");
   let deleteBtn = document.querySelector(".delete");
+  let closeYDIBtn = document.getElementById("close-you-did-it");
   const keyboardBtn = document.querySelector(".newKeyboard");
   let timer = document.getElementById("timer");
   let startStopButton = document.getElementById("start-stop");
@@ -112,9 +113,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (textField.value === textField.placeholder) {
       console.log("Inner text matches placeholder text");
       if (counter === 5) {
-        alert("you did it!");
+        textField.classList.add("wrapped");
         stopTimer();
         counter = 1;
+        // show YOUDIDIT
+        let youDidIt = document.querySelector(".you-did-it");
+        youDidIt.classList.add("show");
+
+
       } else {
         // add class to completed text field
         textField.classList.add("wrapped");
@@ -151,6 +157,13 @@ document.addEventListener("DOMContentLoaded", () => {
   clearBtn.addEventListener("click", () => {
     textField.value = "";
   });
+
+  closeYDIBtn.addEventListener("click", () => {
+    let youDidIt = document.querySelector(".you-did-it");
+    console.log(youDidIt);
+    console.log("clicked YDI close")
+    youDidIt.classList.remove("show");
+  })
 
   deleteBtn.addEventListener("click", deleteLastCharacter);
 
@@ -212,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const deleteButton = document.createElement("h2");
     // Set the class and data-key attributes
     deleteButton.classList.add("delete");
-    deleteButton.innerText = "\u2421";
+    deleteButton.innerHTML = '<i class="fa fa-backspace"></i>';
     row1.appendChild(deleteButton);
 
     //ROW 2
@@ -249,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearButton = document.createElement("h2");
     // Set the class and data-key attributes
     clearButton.classList.add("clear");
-    clearButton.innerText = "\u2327";
+    clearButton.innerHTML = '<i class="fa fa-remove"></i>';
     row4.appendChild(clearButton);
     let keys = document.querySelectorAll(".key");
     addKeyClickEventListener(keys);
