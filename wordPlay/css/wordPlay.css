@@ -22,6 +22,7 @@ body {
   border-radius: 10px;
   margin-top: -30px;
   margin-bottom: 10px;
+  color: black;
 }
 
 .textFields {
@@ -47,11 +48,15 @@ body {
 
 #keyboard {
   display: flex;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   flex-direction: column;
   justify-content: space-between;
   height: 20vh; /* set a fixed height for the keyboard */
   align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: black;
 }
 
 .row1,
