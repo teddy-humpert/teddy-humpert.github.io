@@ -2,6 +2,7 @@ html,
 body {
   width: 100%;
   margin: auto;
+  color: black;
 }
 
 #stopwatch {
@@ -19,10 +20,11 @@ body {
   height: 50px;
   font-size: 30px;
   font-family: Oswald, sans-serif;
+  border: 1px solid gray;
   border-radius: 10px;
   margin-top: -30px;
   margin-bottom: 10px;
-  color: black;
+  text-align: center;
 }
 
 .textFields {
@@ -44,19 +46,19 @@ body {
   text-align: center;
   font-size: 30px;
   font-family: Oswald, sans-serif;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 2px;
 }
 
 #keyboard {
   display: flex;
-  /* flex-grow: 1; */
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
   height: 20vh; /* set a fixed height for the keyboard */
   align-items: center;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  color: black;
 }
 
 .row1,
@@ -82,6 +84,9 @@ body {
   width: 50px; 
   height: 50px;
   font-size: 30px; 
+  border: 1px solid gray;
+  border-radius: 10px;
+  color: black;
 }
 
 nav {
