@@ -168,11 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   deleteBtn.addEventListener("click", deleteLastCharacter);
 
-//   keyboardBtn.addEventListener("click", newKeyboard);
+  //   keyboardBtn.addEventListener("click", newKeyboard);
 
   function newKeyboard() {
     // get rows, clear rows,
     const buttonsToClear = document.querySelectorAll("button.key");
+    let clearBtn = document.querySelector(".clear");
+    let deleteBtn = document.querySelector(".delete");
     deleteBtn.remove();
     clearBtn.remove();
     buttonsToClear.forEach((button) => button.remove());
@@ -267,7 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addKeyClickEventListener(keys);
     // WOOHOO GOT IT! JUST HAD TO ADD ARRAY PARAM ... WOOT
     console.log("added key click event");
-    
   }
 
   function shuffleArray(array) {
@@ -279,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteLastCharacter() {
-    let textField = document.getElementById("text-field"+counter);
+    let textField = document.getElementById("text-field" + counter);
     const currentValue = textField.value;
     textField.value = currentValue.substring(0, currentValue.length - 1);
   }
