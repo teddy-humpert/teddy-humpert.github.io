@@ -85,7 +85,7 @@ function shuffleArray(array) {
 
 document.addEventListener("DOMContentLoaded", () => {
   let counter = 0;
-  console.log(counter);
+  // console.log(counter);
   let keys = document.querySelectorAll(".key");
   const textField = document.getElementById("text-field");
   const currentValue = textField.value;
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scoreCount.innerText = 0;
 
   addKeyClickEventListener(keys);
-  console.log("added key click event");
+  // console.log("added key click event");
 
   clearBtn.addEventListener("click", () => {
     textField.value = "";
@@ -111,22 +111,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   deleteBtn.addEventListener("click", deleteLastCharacter);
 
-  console.log(textField.placeholder);
+  // console.log(textField.placeholder);
 
   function handleKeyClick(event) {
     textField.value += event.target.innerText;
-    console.log(event.target.innerText);
+    // console.log(event.target.innerText);
     //NEED EVENT LISTENER ON KEY CAUSE INPUT IS SET TO KEYBOARD
     if (textField.value === textField.placeholder) {
-      console.log("Inner text matches placeholder text");
+      // console.log("Inner text matches placeholder text");
       counter++;
       scoreCount.innerText = counter;
       textField.placeholder = playWordList[counter];
       textField.value = "";
       newKeyboard();
-      console.log(counter);
+      // console.log(counter);
     //   textField = document.getElementById("text-field" + counter);
-      console.log(textField.value);
+      // console.log(textField.value);
       let clearBtn = document.querySelector(".clear");
       let deleteBtn = document.querySelector(".delete");
       clearBtn.addEventListener("click", () => {
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteBtn.addEventListener("click", deleteLastCharacter);
       // Call the function to add the event listener
     } else {
-      console.log("Inner text does not match placeholder text");
+      // console.log("Inner text does not match placeholder text");
     }
   }
 
@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closeYDIBtn.addEventListener("click", () => {
     let youDidIt = document.querySelector(".you-did-it");
-    console.log(youDidIt);
-    console.log("clicked YDI close");
+    // console.log(youDidIt);
+    // console.log("clicked YDI close");
     youDidIt.classList.remove("show");
   });
 
@@ -162,6 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let howToPlay = document.querySelector(".how-to-play");
     howToPlay.classList.remove("show");
   });
+
+  let htpItem = document.getElementById("htpMenuItem");
+  htpItem.addEventListener("click", () => {
+    let howToPlay = document.querySelector(".how-to-play");
+    howToPlay.classList.toggle("show");
+  })
 
   //   keyboardBtn.addEventListener("click", newKeyboard);
 
@@ -267,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let keys = document.querySelectorAll(".key");
     addKeyClickEventListener(keys);
     // WOOHOO GOT IT! JUST HAD TO ADD ARRAY PARAM ... WOOT
-    console.log("added key click event");
+    // console.log("added key click event");
   }
 
   function shuffleArray(array) {
@@ -336,21 +342,23 @@ document.addEventListener("DOMContentLoaded", () => {
       .padStart(2, "0")}`;
     if (remainingTime <= 0) {
       stopTimer();
-      counter = 0;
+      
       // show YOUDIDIT
       let youDidIt = document.querySelector(".you-did-it");
+      const h2 = document.createElement('h2');
+      h2.innerText = "You got " + counter + " total words!";
+      youDidIt.appendChild(h2);
       youDidIt.classList.add("show");
     }
   }
 
   // so i'm going to need an event listener that's watching for when textfield inner text matches placeholder text
   textField.addEventListener("input", function () {
-    console.log(textField.placeholder);
-    console.log(textField.value);
+    
     if (textField.value === textField.placeholder) {
-      console.log("Inner text matches placeholder text");
+      // console.log("Inner text matches placeholder text");
     } else {
-      console.log("Inner text does not match placeholder text");
+      // console.log("Inner text does not match placeholder text");
     }
   });
 
@@ -360,11 +368,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dropIcons.forEach((icon) => {
     icon.addEventListener("click", () => {
-      console.log("you clicked a dropdown button");
+      // console.log("you clicked a dropdown button");
       const dropdown = icon.parentNode;
-      console.log(dropdown);
+      // console.log(dropdown);
       const dropdownContent = dropdown.querySelector(".dropdown-content");
-      console.log(dropdownContent);
+      // console.log(dropdownContent);
       dropdownContent.classList.toggle("show");
     });
   });
