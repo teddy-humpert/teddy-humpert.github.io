@@ -7,20 +7,43 @@ body {
   cursor: pointer;
 }
 
-
 #stopwatch {
   display: flex;
   flex-grow: 1;
   align-items: center;
   justify-content: center; /* center horizontally */
-  flex-direction: column;
+  flex-direction: row;
   font-size: 30px;
   font-family: Oswald, sans-serif;
+  margin-top: 40px;
+}
+
+#scoreCount {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center; /* center horizontally */
+  flex-direction: row;
+  font-size: 30px;
+  font-family: Oswald, sans-serif;
+  margin-top: -40px;
+
+}
+
+#score {
+  margin-left: 10px;
+  border: 2px solid green;
+  padding: 2px 12px 4px 12px;
+  border-radius: 10px;
 }
 
 #timer {
-  margin-top: 50px;
+  margin-left: 10px;
+  margin-top: -10px;
   margin-bottom: -2px;
+  border: 2px solid red;
+  padding: 2px 12px 4px 12px;
+  border-radius: 10px;
 }
 
 #start-stop {
@@ -44,11 +67,7 @@ body {
   margin-bottom: 10px;
 }
 
-#text-field1,
-#text-field2,
-#text-field3,
-#text-field4,
-#text-field5 {
+#text-field {
   width: 346px;
   height: 40px;
   text-align: center;
@@ -59,6 +78,7 @@ body {
   margin-bottom: 5px;
   padding: 2px;
   color: black;
+  margin-top: 0px;
 }
 
 .wrapped {
@@ -80,7 +100,7 @@ body {
   justify-content: space-between;
   height: 20vh; /* set a fixed height for the keyboard */
   align-items: center;
-  margin-top: -20px;
+  margin-top: 0px;
 }
 
 .row1,
@@ -104,9 +124,14 @@ body {
   align-items: center;
   text-align: center;
   vertical-align: middle;
-  width: 50px;
+  /* width: 50px;
   height: 50px;
-  font-size: 30px;
+  font-size: 30px; */
+  width: 30px;
+  height: 50px;
+  font-size: 20px;
+  margin: 3px;
+
   border: 1px solid gray;
   border-radius: 10px;
   color: black;
@@ -169,7 +194,6 @@ nav {
   color: black;
 }
 
-
 /* #gameTitle {
   font-family: Oswald, sans-serif;
   top: 0px;
@@ -190,6 +214,7 @@ nav {
   text-align: center;
   z-index: 1;
   margin-bottom: -30px;
+  margin-top: -20px;
 }
 
 .you-did-it {

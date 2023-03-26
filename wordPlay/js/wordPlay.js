@@ -71,11 +71,9 @@ const wordlist = [
 // then deal with actual matching from keyboard and movement from there
 // should have everything locked until the player hits start.
 let playWordList = shuffleArray(wordlist);
-for (let i = 1; i < 6; i++) {
-  let textField = document.getElementById("text-field" + i);
-  textField.placeholder = playWordList[i];
-  textField.disabled = true; // disables other keyboards - can only use buttons
-}
+let textField = document.getElementById("text-field");
+textField.placeholder = playWordList[0];
+textField.disabled = true; // disables other keyboards - can only use buttons
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -86,11 +84,12 @@ function shuffleArray(array) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let counter = 1;
+  let counter = 0;
   console.log(counter);
   let keys = document.querySelectorAll(".key");
-  let textField = document.getElementById("text-field" + counter);
+  const textField = document.getElementById("text-field");
   const currentValue = textField.value;
+  let scoreCount = document.getElementById("score");
   let clearBtn = document.querySelector(".clear");
   let deleteBtn = document.querySelector(".delete");
   let closeYDIBtn = document.getElementById("close-you-did-it");
@@ -100,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let intervalId;
   let startTime;
   let timerStarted = false;
+  scoreCount.innerText = 0;
 
   addKeyClickEventListener(keys);
   console.log("added key click event");
@@ -112,31 +112,22 @@ document.addEventListener("DOMContentLoaded", () => {
     //NEED EVENT LISTENER ON KEY CAUSE INPUT IS SET TO KEYBOARD
     if (textField.value === textField.placeholder) {
       console.log("Inner text matches placeholder text");
-      if (counter === 5) {
-        textField.classList.add("wrapped");
-        stopTimer();
-        counter = 1;
-        // show YOUDIDIT
-        let youDidIt = document.querySelector(".you-did-it");
-        youDidIt.classList.add("show");
 
-
-      } else {
-        // add class to completed text field
-        textField.classList.add("wrapped");
-        counter++;
-        newKeyboard();
-        console.log(counter);
-        textField = document.getElementById("text-field" + counter);
-        console.log(textField.value);
-        let clearBtn = document.querySelector(".clear");
-        let deleteBtn = document.querySelector(".delete");
-        clearBtn.addEventListener("click", () => {
-          textField.value = "";
-        });
-        deleteBtn.addEventListener("click", deleteLastCharacter);
-        // Call the function to add the event listener
-      }
+      counter++;
+      scoreCount.innerText = counter;
+      textField.placeholder = playWordList[counter];
+      textField.value = "";
+      newKeyboard();
+      console.log(counter);
+      textField = document.getElementById("text-field" + counter);
+      console.log(textField.value);
+      let clearBtn = document.querySelector(".clear");
+      let deleteBtn = document.querySelector(".delete");
+      clearBtn.addEventListener("click", () => {
+        textField.value = "";
+      });
+      deleteBtn.addEventListener("click", deleteLastCharacter);
+      // Call the function to add the event listener
     } else {
       console.log("Inner text does not match placeholder text");
     }
@@ -161,9 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
   closeYDIBtn.addEventListener("click", () => {
     let youDidIt = document.querySelector(".you-did-it");
     console.log(youDidIt);
-    console.log("clicked YDI close")
+    console.log("clicked YDI close");
     youDidIt.classList.remove("show");
-  })
+  });
 
   deleteBtn.addEventListener("click", deleteLastCharacter);
 
@@ -213,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // for loops?
     //ROW 1
     const row1 = document.querySelector(".row1");
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 10; i++) {
       const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
@@ -221,16 +212,9 @@ document.addEventListener("DOMContentLoaded", () => {
       row1.appendChild(button);
     }
 
-    //add delete button
-    const deleteButton = document.createElement("h2");
-    // Set the class and data-key attributes
-    deleteButton.classList.add("delete");
-    deleteButton.innerHTML = '<i class="fa fa-backspace"></i>';
-    row1.appendChild(deleteButton);
-
     //ROW 2
     const row2 = document.querySelector(".row2");
-    for (let i = 6; i < 13; i++) {
+    for (let i = 10; i < 19; i++) {
       const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
@@ -238,9 +222,17 @@ document.addEventListener("DOMContentLoaded", () => {
       row2.appendChild(button);
     }
 
-    //ROW 3
     const row3 = document.querySelector(".row3");
-    for (let i = 13; i < 20; i++) {
+
+    const clearButton = document.createElement("h2");
+    // Set the class and data-key attributes
+    clearButton.classList.add("clear");
+    clearButton.innerHTML = '<i class="fa fa-remove"></i>';
+    row3.appendChild(clearButton);
+
+    //ROW 3
+
+    for (let i = 19; i < 26; i++) {
       const button = document.createElement("h2");
       // Set the class and data-key attributes
       button.classList.add("key");
@@ -248,22 +240,25 @@ document.addEventListener("DOMContentLoaded", () => {
       row3.appendChild(button);
     }
 
+    //add delete button
+    const deleteButton = document.createElement("h2");
+    // Set the class and data-key attributes
+    deleteButton.classList.add("delete");
+    deleteButton.innerHTML = '<i class="fa fa-backspace"></i>';
+    row3.appendChild(deleteButton);
+
     //ROW 4
-    const row4 = document.querySelector(".row4");
-    for (let i = 20; i < 26; i++) {
-      const button = document.createElement("h2");
-      // Set the class and data-key attributes
-      button.classList.add("key");
-      button.textContent = useArray[i].toUpperCase();
-      row4.appendChild(button);
-    }
+    // const row4 = document.querySelector(".row4");
+    // for (let i = 20; i < 26; i++) {
+    //   const button = document.createElement("h2");
+    //   // Set the class and data-key attributes
+    //   button.classList.add("key");
+    //   button.textContent = useArray[i].toUpperCase();
+    //   row4.appendChild(button);
+    // }
 
     //add clear button
-    const clearButton = document.createElement("h2");
-    // Set the class and data-key attributes
-    clearButton.classList.add("clear");
-    clearButton.innerHTML = '<i class="fa fa-remove"></i>';
-    row4.appendChild(clearButton);
+
     let keys = document.querySelectorAll(".key");
     addKeyClickEventListener(keys);
     // WOOHOO GOT IT! JUST HAD TO ADD ARRAY PARAM ... WOOT
@@ -279,29 +274,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteLastCharacter() {
-    let textField = document.getElementById("text-field" + counter);
+    // let textField = document.getElementById("text-field" + counter);
     const currentValue = textField.value;
     textField.value = currentValue.substring(0, currentValue.length - 1);
   }
 
-  function startTimer() {
-    startTime = Date.now();
-    intervalId = setInterval(updateTimer, 1000);
-  }
+  //   function startTimer() {
+  //     startTime = Date.now();
+  //     intervalId = setInterval(updateTimer, 1000);
+  //   }
 
-  function stopTimer() {
-    clearInterval(intervalId);
-  }
+  //   function stopTimer() {
+  //     clearInterval(intervalId);
+  //   }
 
-  function updateTimer() {
-    let elapsedTime = Math.floor((Date.now() - startTime) / 1000); // calculate elapsed time in seconds
-    let hours = Math.floor(elapsedTime / 3600);
-    let minutes = Math.floor((elapsedTime - hours * 3600) / 60);
-    let seconds = elapsedTime - hours * 3600 - minutes * 60;
-    timer.innerText = `${minutes.toString().padStart(2, "0")}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
-  }
+  //   function updateTimer() {
+  //     let elapsedTime = Math.floor((Date.now() - startTime) / 1000); // calculate elapsed time in seconds
+  //     let hours = Math.floor(elapsedTime / 3600);
+  //     let minutes = Math.floor((elapsedTime - hours * 3600) / 60);
+  //     let seconds = elapsedTime - hours * 3600 - minutes * 60;
+  //     timer.innerText = `${minutes.toString().padStart(2, "0")}:${seconds
+  //       .toString()
+  //       .padStart(2, "0")}`;
+  //   }
 
   // startStopButton.addEventListener("click", function () {
   //   if (startStopButton.innerText === "Start") {
@@ -313,8 +308,37 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // });
 
+  let duration = 60; // duration of the countdown in seconds
+
+  function startTimer() {
+    startTime = Date.now();
+    intervalId = setInterval(updateTimer, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(intervalId);
+  }
+
+  function updateTimer() {
+    let remainingTime = Math.max(
+      duration - Math.floor((Date.now() - startTime) / 1000),
+      0
+    ); // calculate remaining time in seconds
+    let minutes = Math.floor(remainingTime / 60);
+    let seconds = remainingTime % 60;
+    timer.innerText = `${minutes.toString().padStart(2, "0")}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
+    if (remainingTime <= 0) {
+      stopTimer();
+      counter = 0;
+      // show YOUDIDIT
+      let youDidIt = document.querySelector(".you-did-it");
+      youDidIt.classList.add("show");
+    }
+  }
+
   // so i'm going to need an event listener that's watching for when textfield inner text matches placeholder text
-  textField = document.getElementById("text-field1");
   textField.addEventListener("input", function () {
     console.log(textField.placeholder);
     console.log(textField.value);
