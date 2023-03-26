@@ -104,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
   addKeyClickEventListener(keys);
   console.log("added key click event");
 
+  clearBtn.addEventListener("click", () => {
+    textField.value = "";
+  });
+
+  deleteBtn.addEventListener("click", deleteLastCharacter);
+
   console.log(textField.placeholder);
 
   function handleKeyClick(event) {
@@ -112,14 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //NEED EVENT LISTENER ON KEY CAUSE INPUT IS SET TO KEYBOARD
     if (textField.value === textField.placeholder) {
       console.log("Inner text matches placeholder text");
-
       counter++;
       scoreCount.innerText = counter;
       textField.placeholder = playWordList[counter];
       textField.value = "";
       newKeyboard();
       console.log(counter);
-      textField = document.getElementById("text-field" + counter);
+    //   textField = document.getElementById("text-field" + counter);
       console.log(textField.value);
       let clearBtn = document.querySelector(".clear");
       let deleteBtn = document.querySelector(".delete");
@@ -145,18 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  clearBtn.addEventListener("click", () => {
-    textField.value = "";
-  });
-
   closeYDIBtn.addEventListener("click", () => {
     let youDidIt = document.querySelector(".you-did-it");
     console.log(youDidIt);
     console.log("clicked YDI close");
     youDidIt.classList.remove("show");
   });
-
-  deleteBtn.addEventListener("click", deleteLastCharacter);
 
   //   keyboardBtn.addEventListener("click", newKeyboard);
 
