@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let clearBtn = document.querySelector(".clear");
   let deleteBtn = document.querySelector(".delete");
   let closeYDIBtn = document.getElementById("close-you-did-it");
+  let closeHTPBtn = document.getElementById("close-how-to-play");
   const keyboardBtn = document.querySelector(".newKeyboard");
   let timer = document.getElementById("timer");
   let startStopButton = document.getElementById("start-stop");
@@ -155,6 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(youDidIt);
     console.log("clicked YDI close");
     youDidIt.classList.remove("show");
+  });
+
+  closeHTPBtn.addEventListener("click", () => {
+    let howToPlay = document.querySelector(".how-to-play");
+    howToPlay.classList.remove("show");
   });
 
   //   keyboardBtn.addEventListener("click", newKeyboard);
